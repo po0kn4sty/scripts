@@ -20,7 +20,6 @@ data = { entry['receipt_id'] : entry['message_from_buyer'] for entry in data
 
 csvreader = csv.reader(f)
 orders = {}
-skipped = 0
 counted = 0
 glossycount = 0
 mattecount = 0
@@ -89,7 +88,6 @@ print "glossy = " + str(len(glossysort))
 print "matte = " + str(len(mattesort))
 print "Total items: " + str(total)
 print "counted" + " " + str(counted)
-print "skipped" + " " + str(skipped)
 print "Glossy count = " + str(glossycount)
 print "Matte count = " + str(mattecount)
 print customs
