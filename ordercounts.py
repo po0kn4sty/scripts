@@ -90,6 +90,6 @@ print "Total items: " + str(total)
 print "counted" + " " + str(counted)
 print "Glossy count = " + str(glossycount)
 print "Matte count = " + str(mattecount)
-print customs
-print customcount
+print "List of customs " + str(customs)
+print "There are " + str(customcount) + " custom/customizable orders."
 
