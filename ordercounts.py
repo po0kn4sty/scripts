@@ -12,7 +12,7 @@ start_date = sys.argv[3]
 end_date = sys.argv[4]
 
 f = open(input_name, 'r')
-with open('receipts.json') as datafile:
+with open('oRec.json') as datafile:
     data = json.load(datafile)['results']
 
 data = { entry['receipt_id'] : entry['message_from_buyer'] for entry in data
@@ -33,6 +33,7 @@ for line in csvreader:
     order_date = line[0]
     if order_date < start_date or order_date > end_date:
         continue
+    counted += 1
     order_id = int(line[23])
     material = str("Glossy" if "gloss" in line[24].lower() else "Matte")
     order_item_name = re.sub(stripper, "", line[1])
@@ -41,15 +42,13 @@ for line in csvreader:
     message = line[24]
     if inner_message:
         message += "\n#BeginNote\n" + inner_message + "\n#EndNote\n"
-    else:
-        pass
     order_item_name += message
     count = line[3]
     if 'custom' in order_item_name:
         customcount += 1
         if not inner_message:
             customs.append(line)
-    counted += 1
+    
     if material == "Glossy":
         glossycount += 1
         if glossyorders.has_key(order_item_name):
