@@ -1,3 +1,6 @@
 *.pyc
 *.ks
 resources/.DS_Store
+*.ck
+*.swp
+*.txt

@@ -1,7 +1,6 @@
 #! /usr/local/bin/python
 
 import csv
-import operator
 import sys
 import json
 import re
