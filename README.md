@@ -1,2 +1,2 @@
 # scripts
-General purpose scripts
+Quick N' Dirty
